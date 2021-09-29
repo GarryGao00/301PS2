@@ -223,6 +223,21 @@ class RedBlackTree:
         x.c = False
         return
 
+    def searchKeyHelper(self, key, current):
+        if current == self.nil:
+            return False
+        if current.key == key:
+            return True
+        elif current.key > key:
+            return self.searchKeyHelper(key, current.left)
+        else:
+            return self.searchKeyHelper(key, current.right)
+
+    def searchKey(self, key):
+        current = self.root
+        return self.searchKeyHelper(key, current)
+
+#not required for the homework
 def print_tree1(node, level=0):
     if node.key != "NIL":
         print_tree1(node.left, level + 1)

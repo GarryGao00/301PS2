@@ -2,7 +2,8 @@ import RBtree as rbt
 import numpy as np
 import random
 
-#insert test block
+#insertion test block
+#insertion test completed
 insert = 0
 if insert:
     print("insert test block start")
@@ -19,7 +20,8 @@ if insert:
     rbt.print_tree1(T.root)
 
 #delete test block
-delete = 1
+#delete test completed
+delete = 0
 if delete: 
     print("delete test block start:")
     testblock = [10, 80, 92, 42, 28, 26, 73, 45, 41, 97]
@@ -44,3 +46,28 @@ if delete:
     print("one node removed, value =", nodes["Node1"].key)
     rbt.print_tree1(T.root)
 
+#search test block
+#search test completed
+search = 1
+if search:
+    print("search test block start:")
+    testblock = [10, 80, 92, 42, 28, 26, 73, 45, 41, 97]
+    T = rbt.RedBlackTree()
+    numNode = len(testblock)
+    nodes = {}
+
+    for i in range(numNode):
+        nodes["Node"+str(i)] = rbt.RedBlackNode(testblock[i])
+        T.insert(nodes["Node"+str(i)])
+        #print(i+1, " elements added, value =", testblock[i])
+
+    print("Tree init done")
+
+    print(T.searchKey(10))
+    print(T.searchKey(11))
+    print(T.searchKey(45))
+    print(T.searchKey(46))
+    T.delete(nodes["Node7"])
+    T.delete(nodes["Node0"])
+    print(T.searchKey(10))
+    print(T.searchKey(45))
