@@ -163,18 +163,18 @@ class RedBlackTree:
             y.left.p = y
             y.c = z.c
         if not yoc:
-            print("x type", type(x), "x.c", x.c)
+            #print("x type", type(x), "x.c", x.c)
             self.deleteFixup(x)
-            print("delete&fixup done")
+            #print("delete&fixup done")
             
         return
     
     def deleteFixup(self, x):
-        print("inside deletefixup", type(x))
+        #print("inside deletefixup", type(x))
         
         while (x != self.root) and (not x.c):
             if x == x.p.left:
-                print("1st branch")
+                #print("1st branch")
                 w = x.p.right
                 if w.c:
                     w.c = False
@@ -197,7 +197,7 @@ class RedBlackTree:
                     self.leftRotate(x.p)
                     x = self.root
             else:
-                print("2nd branch")
+                #print("2nd branch")
                 w = x.p.left
                 if w.c:
                     w.c = False

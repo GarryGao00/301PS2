@@ -30,7 +30,7 @@ if delete:
     for i in range(numNode):
         nodes["Node"+str(i)] = rbt.RedBlackNode(testblock[i])
         T.insert(nodes["Node"+str(i)])
-        print(i+1, " elements added, value =", testblock[i])
+        #print(i+1, " elements added, value =", testblock[i])
 
     rbt.print_tree1(T.root)
 
@@ -39,5 +39,8 @@ if delete:
     rbt.print_tree1(T.root)
     T.delete(nodes["Node3"])
     print("one node removed, value =", nodes["Node3"].key)
+    rbt.print_tree1(T.root)
+    T.delete(nodes["Node1"])
+    print("one node removed, value =", nodes["Node1"].key)
     rbt.print_tree1(T.root)
 
