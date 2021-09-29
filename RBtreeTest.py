@@ -36,6 +36,8 @@ if delete:
 
     T.delete(nodes["Node0"])
     print("one node removed, value =", nodes["Node0"].key)
-
+    rbt.print_tree1(T.root)
+    T.delete(nodes["Node3"])
+    print("one node removed, value =", nodes["Node3"].key)
     rbt.print_tree1(T.root)
 

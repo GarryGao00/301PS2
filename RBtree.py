@@ -219,6 +219,8 @@ class RedBlackTree:
                     w.left.c = False
                     self.rightRotate(x.p)
                     x = self.root
+
+        x.c = False
         return
 
 def print_tree1(node, level=0):
