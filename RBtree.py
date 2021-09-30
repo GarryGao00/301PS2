@@ -1,6 +1,3 @@
-import math
-import numpy as np
-
 #tree block
 class RedBlackNode:
     def __init__(self, val, p=None, left=None, right=None, c=False):
@@ -12,7 +9,7 @@ class RedBlackNode:
         self.left = left
         # right child 
         self.right = right
-        # c = T is red, c = F is black
+        # c = T is red, c = F is black 
         self.c = c
         
 class RedBlackTree:
