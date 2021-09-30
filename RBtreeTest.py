@@ -20,8 +20,11 @@ if insert:
     rbt.print_tree1(T.root)
 
 #delete test block
-#delete test completed
-delete = 0
+#delete test incomplete
+#case needed: delete same node twice
+#case needed: delete from empty tree
+#case needed: delete non-existent node
+delete = 1
 if delete: 
     print("delete test block start:")
     testblock = [10, 80, 92, 42, 28, 26, 73, 45, 41, 97]
@@ -36,19 +39,30 @@ if delete:
 
     rbt.print_tree1(T.root)
 
-    T.delete(nodes["Node0"])
-    print("one node removed, value =", nodes["Node0"].key)
-    rbt.print_tree1(T.root)
-    T.delete(nodes["Node3"])
-    print("one node removed, value =", nodes["Node3"].key)
-    rbt.print_tree1(T.root)
-    T.delete(nodes["Node1"])
-    print("one node removed, value =", nodes["Node1"].key)
-    rbt.print_tree1(T.root)
+    # T.delete(nodes["Node0"])
+    # rbt.print_tree1(T.root)
+    # T.delete(nodes["Node3"])
+    # rbt.print_tree1(T.root)
+    # T.delete(nodes["Node3"])
+    # rbt.print_tree1(T.root)
+    for i in range(11):
+        T.delete(T.root)
+        rbt.print_tree1(T.root)
+    
 
 #search test block
 #search test completed
-search = 1
+
+# search test block start:
+# Tree init done
+# True
+# False
+# True
+# False
+# False
+# False
+
+search = 0
 if search:
     print("search test block start:")
     testblock = [10, 80, 92, 42, 28, 26, 73, 45, 41, 97]

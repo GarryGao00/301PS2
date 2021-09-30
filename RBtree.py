@@ -167,6 +167,7 @@ class RedBlackTree:
             self.deleteFixup(x)
             #print("delete&fixup done")
             
+        print("one node removed, value =", y.key)
         return
     
     def deleteFixup(self, x):
@@ -227,7 +228,7 @@ class RedBlackTree:
         if current == self.nil:
             return False
         if current.key == key:
-            return True
+            return current
         elif current.key > key:
             return self.searchKeyHelper(key, current.left)
         else:
@@ -235,7 +236,21 @@ class RedBlackTree:
 
     def searchKey(self, key):
         current = self.root
-        return self.searchKeyHelper(key, current)
+        temp = self.searchKeyHelper(key, current)
+        return bool(temp)
+
+    def deleteKey(self, key):
+        current = self.root
+        temp = self.searchKeyHelper(key, current)
+        if bool(temp):
+            self.delete(temp)
+            #print("key "+str(key)+" deleted")
+        #else:
+            #print("key not found")
+            
+
+        return
+
 
 #not required for the homework
 def print_tree1(node, level=0):
