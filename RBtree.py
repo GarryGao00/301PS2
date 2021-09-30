@@ -134,11 +134,18 @@ class RedBlackTree:
                 
         
     def treeMinimum(self, x):
+        if x == self.nil:
+            return x
         while x.left != self.nil:
             x = x.left
         return x
     
     def delete(self, z):
+        if z==self.nil:
+            return
+        if self.searchKey(z.key) == False:
+            return
+
         y = z
         yoc = y.c
         if z.left == self.nil:
@@ -167,7 +174,7 @@ class RedBlackTree:
             self.deleteFixup(x)
             #print("delete&fixup done")
             
-        print("one node removed, value =", y.key)
+        #print("one node removed, value =", y.key)
         return
     
     def deleteFixup(self, x):
@@ -259,5 +266,8 @@ def print_tree1(node, level=0):
         print('-' * 4 * level + '> ' +
                      str(node.key) + ' ' + ('r' if node.c else 'b'))
         print_tree1(node.right, level + 1)
+    else: 
+        print('-' * 4 * (level+1) + '> ' +
+               str(node.key) + ' ' + ('r' if node.c else 'b'))
         
     return

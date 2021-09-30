@@ -45,9 +45,17 @@ if delete:
     # rbt.print_tree1(T.root)
     # T.delete(nodes["Node3"])
     # rbt.print_tree1(T.root)
-    for i in range(11):
+
+    for i in range(15):
         T.delete(T.root)
         rbt.print_tree1(T.root)
+        print("")
+
+    print("delete non-existent node")
+    T.delete(nodes["Node3"])
+    rbt.print_tree1(T.root)
+
+    
     
 
 #search test block
